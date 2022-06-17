@@ -1,0 +1,14 @@
+les couches 
+    vue (vue physique , vue logique)
+    controlleur 
+    persistance 
+    service 
+    domaine
+
+les architectures 
+1-tiers
+integrer le DAO dans le mvc 
+la reecriture d'URL exemple localhost/index.php -> localhost/
+
+page de connexion : test de la faille d'injection sql 
+creer une page qui permet d'extraire des donnees dans une base d'un autre utilisateur 
