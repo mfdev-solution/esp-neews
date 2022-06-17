@@ -23,9 +23,9 @@ class ArticleDao
       $data = $resutl->fetchAll(PDO::FETCH_OBJ);
       return $data;
    }
-   public function getArticleById($id)
+   public function getArticleById($id, $categ)
    {
-      $req = "select  * from article ar where id = $id ";
+      $req = "select  * from article ar where id = $id and id_cat = (select id from categorie where nom = '$categ') ";
       $resutl = $this->bd->query($req);
       $data = $resutl->fetchAll(PDO::FETCH_OBJ);
       return $data;

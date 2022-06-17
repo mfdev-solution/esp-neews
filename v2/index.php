@@ -7,8 +7,7 @@ $controler->navController();
 
 #controle de page d'accueille
 if (isset($_GET['categorie'], $_GET['id'])) {
-
-   $controler->articleById($_GET['id']);
+   $controler->articleById($_GET['id'], $_GET['categorie']);
 } elseif (isset($_GET['categorie'])) {
    if ($controler->isCat($_GET['categorie'])) {
 

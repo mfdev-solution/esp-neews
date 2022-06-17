@@ -30,12 +30,15 @@ class Controller
       }
       return false;
    }
-   public function articleByCateg($categ){
+   public function articleByCateg($categ)
+   {
       $articles = new ArticleDao();
       showArticles($articles->getArticleByCat($categ));
    }
-   public function articleById($id_art){
+   public function articleById($id_art, $categ)
+   {
       $articles = new ArticleDao();
-      showArticleById($articles->getArticleById($id_art));
+      //$result = $articles->getArticleById($id_art, $categ);
+      showArticleById($articles->getArticleById($id_art, $categ));
    }
 }

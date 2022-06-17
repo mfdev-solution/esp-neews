@@ -9,7 +9,9 @@
                 </a>
             <?php } ?>
         <?php } else { ?>
-            <p class="">Aucun article n'a ete publie</p>
+            <div class="empty">
+                <h2>Aucun article n'a ete publie</h2>
+            </div>
         <?php } ?>
     </div>
 <?php } ?>
@@ -17,11 +19,17 @@
 <?php function showArticleById($artObject)
 { ?>
     <div class="details content">
-        <?php foreach ($artObject as $article) { ?>
-            <h2><?= $article->titre ?></h2>
-            <div class="content">
-                <p><?= $article->contenu ?></p>
+        <?php if (!$artObject) { ?>
+            <div class="empty">
+                <h2>aucun article </h2>
             </div>
+        <?php } else { ?>
+            <?php foreach ($artObject as $article) { ?>
+                <h2><?= $article->titre ?></h2>
+                <div class="content">
+                    <p><?= $article->contenu ?></p>
+                </div>
+            <?php } ?>
         <?php } ?>
     </div>
 <?php } ?>
