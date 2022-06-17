@@ -7,11 +7,14 @@ $controler->navController();
 
 #controle de page d'accueille
 if (isset($_GET['categorie'], $_GET['id'])) {
+
    $controler->articleById($_GET['id']);
 } elseif (isset($_GET['categorie'])) {
    if ($controler->isCat($_GET['categorie'])) {
+
       $controler->articleByCateg($_GET['categorie']);
    } else {
+
       echo "cette  categorie n\'existe pas";
    }
 } else {
